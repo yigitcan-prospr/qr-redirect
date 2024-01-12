@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pass URL param</title>
+</head>
+<body style="justify-content: center; align-items: center; display: flex; height: 100dvh;">
+  <script>
+    window.onload = () => {
+      const urlParam = new URLSearchParams(window.location.search).get('url');
+      const link = document.querySelector('a');
+      if (!urlParam) {
+        link.style.display = 'none';
+        return;
+      }
+      link.href = urlParam.replace(/ /g, '+');
+    }
+  </script>
+  <a href="#" style="font-size: 4rem; font-size: 16dvw;">Click me!</a>
+</body>
+</html>
